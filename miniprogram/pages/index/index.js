@@ -1,5 +1,6 @@
 //index.js
-const app = getApp()
+const app = getApp();
+const common = require('../../script/common.js');
 
 Page({
   data: {
@@ -10,7 +11,7 @@ Page({
     requestResult: ''
   },
 
-  onLoad: function() {
+  onLoad: function () {
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
@@ -36,7 +37,7 @@ Page({
     })
   },
 
-  onGetUserInfo: function(e) {
+  onGetUserInfo: function (e) {
     if (!this.data.logged && e.detail.userInfo) {
       this.setData({
         logged: true,
@@ -46,7 +47,7 @@ Page({
     }
   },
 
-  onGetOpenid: function() {
+  onGetOpenid: function () {
     // 调用云函数
     wx.cloud.callFunction({
       name: 'login',
@@ -81,7 +82,7 @@ Page({
         })
 
         const filePath = res.tempFilePaths[0]
-        
+
         // 上传图片
         const cloudPath = 'my-image' + filePath.match(/\.[^.]+?$/)[0]
         wx.cloud.uploadFile({
@@ -93,7 +94,7 @@ Page({
             app.globalData.fileID = res.fileID
             app.globalData.cloudPath = cloudPath
             app.globalData.imagePath = filePath
-            
+
             wx.navigateTo({
               url: '../storageConsole/storageConsole'
             })
@@ -116,5 +117,13 @@ Page({
       }
     })
   },
+
+  onSayHi: function () {
+    common.sayHello('zhanghe')
+    wx.showLoading({
+      title: '加载中',
+    })
+    console.log(wx.env)
+  }
 
 })
