@@ -1,0 +1,4 @@
+/* components/layout/layout.wxss */
+.wrapper {
+  background-color: var(--zhanghe-color);
+}

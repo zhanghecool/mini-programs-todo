@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "Layout": "/components/Layout/Layout"
+  }
 }

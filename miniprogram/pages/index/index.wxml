@@ -1,4 +1,6 @@
 <!--index.wxml-->
-<view class="container">
-  <button type="primary" bindtap="onSayHi">Hi</button>
-</view>
+<Layout>
+  <view class="container">
+    <button type="primary" bindtap="onSayHi">Hi</button>
+  </view>
+</Layout>

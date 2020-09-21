@@ -1,3 +1,6 @@
+/* 加载样式变量 */
+@import "/style/variable.wxss";
+
 /**app.wxss**/
 .container {
   display: flex;

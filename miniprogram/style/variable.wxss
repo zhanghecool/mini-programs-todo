@@ -1,0 +1,10 @@
+page {
+  --zhanghe-color: #ffffff;
+}
+
+/* 暗黑模式下应用的样式 */
+@media (prefers-color-scheme: dark) {
+  page {
+    background: #000000;
+  }
+}
